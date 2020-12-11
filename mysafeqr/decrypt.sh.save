@@ -1,0 +1,14 @@
+#!/bin/sh
+if [  $# -le 1 ] 
+	then 
+		display_usage
+		exit 1
+	fi 
+
+
+
+
+zbarimg --raw $2 > qr_tmp.txt
+
+./bin/run -f qr_tmp.txt -p $1
+rm qr_tmp.txt
